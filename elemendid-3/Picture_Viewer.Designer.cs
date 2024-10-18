@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Picture_Viewer));
             tableLayoutPanel1 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -90,6 +91,7 @@
             pictureBox2.BorderStyle = BorderStyle.Fixed3D;
             tableLayoutPanel2.SetColumnSpan(pictureBox2, 2);
             pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.ErrorImage = (Image)resources.GetObject("pictureBox2.ErrorImage");
             pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(794, 399);
@@ -170,6 +172,7 @@
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All files (*.*)|*.*";
             openFileDialog1.Title = "Select a picture file.";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
             // 
             // Picture_Viewer
             // 
@@ -181,7 +184,6 @@
             Controls.Add(tableLayoutPanel1);
             Name = "Picture_Viewer";
             Text = "Picture_Viewer";
-            Load += Picture_Viewer_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

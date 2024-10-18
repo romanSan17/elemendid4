@@ -324,7 +324,7 @@ namespace Elemendid_vormis_TARpv23
         }
         private void PictureViewerButton_Click(object? sender, EventArgs e)
         {
-            Picture_Viewer pictureViewer = new Picture_Viewer(700, 700);
+            Picture_Viewer pictureViewer = new Picture_Viewer(1000, 700);
             pictureViewer.Show();
         }
         private void mathQuizButton_Click(object? sender, EventArgs e)

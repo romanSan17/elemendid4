@@ -20,7 +20,10 @@ namespace Elemendid_vormis_TARpv23
         }
 
         private void showButton_Click(object sender, EventArgs e)
+
         {
+ 
+            openFileDialog1.FileName = "les-maguelone.jpg";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Load(openFileDialog1.FileName);
@@ -55,10 +58,9 @@ namespace Elemendid_vormis_TARpv23
                 pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
         }
 
-        private void Picture_Viewer_Load(object sender, EventArgs e)
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
-        
     }
 }
