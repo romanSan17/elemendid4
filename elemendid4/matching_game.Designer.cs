@@ -47,6 +47,9 @@
             label2 = new Label();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
+            timeLabel = new FlowLayoutPanel();
+            moveCounterLabel = new FlowLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +62,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(moveCounterLabel, 0, 4);
+            tableLayoutPanel1.Controls.Add(timeLabel, 0, 4);
             tableLayoutPanel1.Controls.Add(label16, 3, 3);
             tableLayoutPanel1.Controls.Add(label15, 2, 3);
             tableLayoutPanel1.Controls.Add(label14, 1, 3);
@@ -78,11 +83,12 @@
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -91,9 +97,9 @@
             label16.Dock = DockStyle.Fill;
             label16.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label16.ForeColor = Color.CornflowerBlue;
-            label16.Location = new Point(602, 338);
+            label16.Location = new Point(602, 314);
             label16.Name = "label16";
-            label16.Size = new Size(193, 110);
+            label16.Size = new Size(193, 102);
             label16.TabIndex = 15;
             label16.Text = "c";
             label16.TextAlign = ContentAlignment.MiddleCenter;
@@ -104,9 +110,9 @@
             label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label15.ForeColor = Color.CornflowerBlue;
-            label15.Location = new Point(403, 338);
+            label15.Location = new Point(403, 314);
             label15.Name = "label15";
-            label15.Size = new Size(191, 110);
+            label15.Size = new Size(191, 102);
             label15.TabIndex = 14;
             label15.Text = "c";
             label15.TextAlign = ContentAlignment.MiddleCenter;
@@ -117,9 +123,9 @@
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label14.ForeColor = Color.CornflowerBlue;
-            label14.Location = new Point(204, 338);
+            label14.Location = new Point(204, 314);
             label14.Name = "label14";
-            label14.Size = new Size(191, 110);
+            label14.Size = new Size(191, 102);
             label14.TabIndex = 13;
             label14.Text = "c";
             label14.TextAlign = ContentAlignment.MiddleCenter;
@@ -130,9 +136,9 @@
             label13.Dock = DockStyle.Fill;
             label13.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label13.ForeColor = Color.CornflowerBlue;
-            label13.Location = new Point(5, 338);
+            label13.Location = new Point(5, 314);
             label13.Name = "label13";
-            label13.Size = new Size(191, 110);
+            label13.Size = new Size(191, 102);
             label13.TabIndex = 12;
             label13.Text = "c";
             label13.TextAlign = ContentAlignment.MiddleCenter;
@@ -143,9 +149,9 @@
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label12.ForeColor = Color.CornflowerBlue;
-            label12.Location = new Point(602, 226);
+            label12.Location = new Point(602, 210);
             label12.Name = "label12";
-            label12.Size = new Size(193, 110);
+            label12.Size = new Size(193, 102);
             label12.TabIndex = 11;
             label12.Text = "c";
             label12.TextAlign = ContentAlignment.MiddleCenter;
@@ -156,9 +162,9 @@
             label11.Dock = DockStyle.Fill;
             label11.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label11.ForeColor = Color.CornflowerBlue;
-            label11.Location = new Point(403, 226);
+            label11.Location = new Point(403, 210);
             label11.Name = "label11";
-            label11.Size = new Size(191, 110);
+            label11.Size = new Size(191, 102);
             label11.TabIndex = 10;
             label11.Text = "c";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -169,9 +175,9 @@
             label10.Dock = DockStyle.Fill;
             label10.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label10.ForeColor = Color.CornflowerBlue;
-            label10.Location = new Point(204, 226);
+            label10.Location = new Point(204, 210);
             label10.Name = "label10";
-            label10.Size = new Size(191, 110);
+            label10.Size = new Size(191, 102);
             label10.TabIndex = 9;
             label10.Text = "c";
             label10.TextAlign = ContentAlignment.MiddleCenter;
@@ -182,9 +188,9 @@
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label9.ForeColor = Color.CornflowerBlue;
-            label9.Location = new Point(5, 226);
+            label9.Location = new Point(5, 210);
             label9.Name = "label9";
-            label9.Size = new Size(191, 110);
+            label9.Size = new Size(191, 102);
             label9.TabIndex = 8;
             label9.Text = "c";
             label9.TextAlign = ContentAlignment.MiddleCenter;
@@ -195,9 +201,9 @@
             label8.Dock = DockStyle.Fill;
             label8.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label8.ForeColor = Color.CornflowerBlue;
-            label8.Location = new Point(602, 114);
+            label8.Location = new Point(602, 106);
             label8.Name = "label8";
-            label8.Size = new Size(193, 110);
+            label8.Size = new Size(193, 102);
             label8.TabIndex = 7;
             label8.Text = "c";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -208,9 +214,9 @@
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label7.ForeColor = Color.CornflowerBlue;
-            label7.Location = new Point(403, 114);
+            label7.Location = new Point(403, 106);
             label7.Name = "label7";
-            label7.Size = new Size(191, 110);
+            label7.Size = new Size(191, 102);
             label7.TabIndex = 6;
             label7.Text = "c";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -221,9 +227,9 @@
             label6.Dock = DockStyle.Fill;
             label6.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label6.ForeColor = Color.CornflowerBlue;
-            label6.Location = new Point(204, 114);
+            label6.Location = new Point(204, 106);
             label6.Name = "label6";
-            label6.Size = new Size(191, 110);
+            label6.Size = new Size(191, 102);
             label6.TabIndex = 5;
             label6.Text = "c";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -234,9 +240,9 @@
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Webdings", 48F, FontStyle.Bold, GraphicsUnit.Point, 2);
             label5.ForeColor = Color.CornflowerBlue;
-            label5.Location = new Point(5, 114);
+            label5.Location = new Point(5, 106);
             label5.Name = "label5";
-            label5.Size = new Size(191, 110);
+            label5.Size = new Size(191, 102);
             label5.TabIndex = 4;
             label5.Text = "c";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -249,7 +255,7 @@
             label4.ForeColor = Color.CornflowerBlue;
             label4.Location = new Point(602, 2);
             label4.Name = "label4";
-            label4.Size = new Size(193, 110);
+            label4.Size = new Size(193, 102);
             label4.TabIndex = 3;
             label4.Text = "c";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -262,7 +268,7 @@
             label3.ForeColor = Color.CornflowerBlue;
             label3.Location = new Point(403, 2);
             label3.Name = "label3";
-            label3.Size = new Size(191, 110);
+            label3.Size = new Size(191, 102);
             label3.TabIndex = 2;
             label3.Text = "c";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -275,7 +281,7 @@
             label2.ForeColor = Color.CornflowerBlue;
             label2.Location = new Point(204, 2);
             label2.Name = "label2";
-            label2.Size = new Size(191, 110);
+            label2.Size = new Size(191, 102);
             label2.TabIndex = 1;
             label2.Text = "c";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -289,7 +295,7 @@
             label1.ForeColor = Color.CornflowerBlue;
             label1.Location = new Point(5, 2);
             label1.Name = "label1";
-            label1.Size = new Size(191, 110);
+            label1.Size = new Size(191, 102);
             label1.TabIndex = 0;
             label1.Text = "c";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -300,6 +306,31 @@
             // 
             timer1.Interval = 750;
             timer1.Tick += timer1_Tick;
+            // 
+            // timer2
+            // 
+            timer2.Interval = 750;
+            timer2.Tick += timer2_Tick;
+            // 
+            // timeLabel
+            // 
+            tableLayoutPanel1.SetColumnSpan(timeLabel, 2);
+            timeLabel.Dock = DockStyle.Fill;
+            timeLabel.FlowDirection = FlowDirection.RightToLeft;
+            timeLabel.Location = new Point(403, 421);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(392, 24);
+            timeLabel.TabIndex = 16;
+            // 
+            // moveCounterLabel
+            // 
+            tableLayoutPanel1.SetColumnSpan(moveCounterLabel, 2);
+            moveCounterLabel.Dock = DockStyle.Fill;
+            moveCounterLabel.FlowDirection = FlowDirection.RightToLeft;
+            moveCounterLabel.Location = new Point(5, 421);
+            moveCounterLabel.Name = "moveCounterLabel";
+            moveCounterLabel.Size = new Size(390, 24);
+            moveCounterLabel.TabIndex = 17;
             // 
             // matching_game
             // 
@@ -334,5 +365,8 @@
         private Label label3;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private FlowLayoutPanel moveCounterLabel;
+        private FlowLayoutPanel timeLabel;
     }
 }
